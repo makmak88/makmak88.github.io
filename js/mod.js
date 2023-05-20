@@ -1,26 +1,29 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
+	name: "The Layering Tree",
+	id: "3OogaBooga2", //OogaBooga2 is normal file, OogaBooga3 Is Admin.
+	author: "1v (1vgot_terminated)",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	offlineLimit: 24,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.0.0.0.0.5",
+	name: "Row 2!",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+		- Added Nothing.<br>
+		- Added stuff.<br>
+		<h3>v0.0.0.0.0.5</h3><br>
+		- Added Rebirths.<br>
+		- Added Auto Prestige.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -43,6 +46,13 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('p', 11)) gain = gain.times("2")
+	if (hasUpgrade('p', 12)) gain = gain.times("3")
+	if (hasUpgrade('Admin', 11)) gain = gain.times("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee9e99999999")
+	if (hasUpgrade('C', 11)) gain = gain.times("4")
+	if (hasUpgrade('C', 12)) gain = gain.times("10")
+	if (hasUpgrade('E', 12)) gain = gain.times("20")
+	if (hasUpgrade('M', 11)) gain = gain.times("100")
 	return gain
 }
 
